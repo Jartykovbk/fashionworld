@@ -78,7 +78,7 @@ def send_welcome(message):
         user_markup = telebot.types.ReplyKeyboardMarkup(True, False)
         user_markup.row("↗Перейти на наш канал",'📞Контактная информация')
         user_markup.row("🛍Заказать товар",'🔝Перейти в меню выбора языка')
-        answer = 'Вы перешли в меню выбора языка.'
+        answer = 'Вы перешли в главное меню .'
         log(message, answer)
         bot.send_message(message.from_user.id, answer, reply_markup=user_markup)
     elif message.text == '📞Контактная информация':
