@@ -95,13 +95,16 @@ def user_location(message):
     lat = message.location.latitude
     lon = message.location.longitude
     answer = 'Адресс покупателя {0} : {1},{2}'.format(message.from_user.first_name, lat, lon)
+    answer1 = "Спасибо ! "
     bot.send_message(662273735, answer)
+    bot.send_message(message.from_user.id , answer1)
 
 @bot.message_handler(content_types=['contact'])
 def user_contact(message):
     answer = 'Заказ пришел от покупателя :{0} ,\nНомер телефона : {1}'.format(message.from_user.first_name,
                                                                               message.contact.phone_number)
+    answer1 = "Спасибо ! "
     bot.send_message(662273735, answer)
-
+    bot.send_message(message.from_user.id, answer1)
 
 bot.polling(none_stop=True)
